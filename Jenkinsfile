@@ -1,36 +1,36 @@
 pipeline {
-    agent any
-    
-    environment { 
-        CC = 'clang'
-    }
-
-    stages {
-        stage('Build') {
-            environment { 
-                DEBUG_FLAGS = '-g'
-            }
+    agent any 
+        
+        environment {
+            USER_NAME = "bhagya"
+            USER_ID = 101
             
-            steps { 
-                sh 'printenv' 
-            }
-        }
-            
-        stage('Test') {
-            when {
-                expression {
-                    BRANCH_NAME == 'main'
-                }
-            }
-            steps{
-                echo 'Testing'
-            }    
         }
         
-        stage('Deploy') {
-            steps{
-                echo 'Deploying'
-            }    
+        stages {
+            stage('Build') {
+                steps {
+                    echo "BUILD_NUMBER = ${env.BUILD_NUMBER}" 
+                    sh 'echo BUILD_NUMBER = $BUILD_NUMBER'
+                    
+                }
+            }
+            
+            stage('Test') {
+                steps {
+                    echo "Testing"
+                    echo "Current user is ${env.USER_NAME}"
+                    echo "Current user ID is ${env.USER_ID}"
+                    
+                }
+            }
+            
+            stage('Deploy') {
+                steps {
+                    echo "Deploying"
+                    
+                }
+            }
         }
-    }
+    
 }
