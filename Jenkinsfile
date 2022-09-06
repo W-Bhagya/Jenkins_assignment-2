@@ -17,6 +17,11 @@ pipeline {
         }
             
         stage('Test') {
+            when {
+                expression {
+                    BRANCH_NAME = 'main'
+                }
+            }
             steps{
                 echo 'Testing'
             }    
