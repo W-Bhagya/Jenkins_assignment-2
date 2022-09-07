@@ -4,14 +4,15 @@ pipeline {
         environment {
             def user_name = "Bhagya"
             def user_id = 101
+            def buildNumber = currentBuild.number
             
         }
         
         stages {
             stage('Build') {
                 steps {
-                    echo "BUILD_NUMBER = ${env.BUILD_NUMBER}" 
-                    sh 'echo BUILD_NUMBER = $BUILD_NUMBER'
+                    echo "buildNumber = ${buildNumber}" 
+                  //  sh 'echo BUILD_NUMBER = $BUILD_NUMBER'
                     
                 }
             }
