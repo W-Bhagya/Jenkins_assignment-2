@@ -2,7 +2,9 @@ pipeline {
     agent any 
         
         environment {
-            USER_NAME = "bhagya"
+            def username = "Bhagya"
+
+          //  USER_NAME = "bhagya"
             USER_ID = 101
             
         }
@@ -19,7 +21,7 @@ pipeline {
             stage('Test') {
                 steps {
                     echo "Testing"
-                    echo "Current user is ${env.USER_NAME}"
+                    echo "Current user is ${username}"
                     echo "Current user ID is ${env.USER_ID}"
                     
                 }
