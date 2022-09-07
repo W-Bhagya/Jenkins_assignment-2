@@ -11,7 +11,7 @@ pipeline {
         stages {
             stage('Build') {
                 steps {
-                    echo "buildNumber = ${currentBuild.number}" 
+                    echo "Current Build Number = ${currentBuild.number}" 
                  
                 }
             }
