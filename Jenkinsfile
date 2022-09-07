@@ -27,6 +27,7 @@ pipeline {
             
             stage('Deploy') {
                 steps {
+                    sh '20.197.30.191:8080'
                     echo "Successfully Deployed"
                    
                 }
