@@ -4,7 +4,7 @@ pipeline {
         environment {
             def user_name = "Bhagya"
             def user_id = 101
-            def buildNumber = currentBuild.number
+            def buildNumber = "currentBuild.number"
             
         }
         
