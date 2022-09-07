@@ -1,6 +1,8 @@
 pipeline {
     agent any 
-    tools maven 'maven-3.8.6'
+    tools maven {
+        'maven-3.8.6'
+    }
         
         environment {
             def user_name = "Bhagya"
