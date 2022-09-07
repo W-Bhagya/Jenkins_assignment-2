@@ -4,7 +4,6 @@ pipeline {
         environment {
             USER_NAME = "bhagya"
             USER_ID = 101
-            CREDENTIALS = credentials("simple-secret-text")
             
         }
         
@@ -29,8 +28,7 @@ pipeline {
             stage('Deploy') {
                 steps {
                     echo "Deploying"
-                    sh 'echo CREDENTIALS = ${env.CREDENTIALS}'
-                    
+                   
                 }
             }
         }
