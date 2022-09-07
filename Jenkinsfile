@@ -29,7 +29,7 @@ pipeline {
             stage('Deploy') {
                 steps {
                     echo "Deploying"
-                    sh 'echo CREDENTIALS = ${env.CREDENTIALS}
+                    sh 'echo CREDENTIALS = ${env.CREDENTIALS}'
                     
                 }
             }
