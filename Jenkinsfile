@@ -32,7 +32,9 @@ pipeline {
               stage('Deploy to tomcat server') {
                   
                   steps {
-                       deploy adapters: [tomcat9(credentialsId: 'cce3dde9-2fa9-41e0-b626-95fee22e7776', path: '', url: 'http://20.204.174.39:8080/')], contextPath: null, war: '**/*.war'     
+                      // deploy adapters: [tomcat9(credentialsId: 'cce3dde9-2fa9-41e0-b626-95fee22e7776', path: '', url: 'http://20.204.174.39:8080/')], contextPath: null, war: '**/*.war'   
+                      
+                      deploy adapters: [tomcat9(url: 'http://20.204.174.39:8080/', credentialsId: 'tomcat_server')],war: 'target/*.war',contextPath: 'app'
                   }
               }
      }
